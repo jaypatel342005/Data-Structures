@@ -1,3 +1,5 @@
+// Write a program to find factors of a given number. 
+
 import java.util.Scanner;
 
 public class Lab1_7 {

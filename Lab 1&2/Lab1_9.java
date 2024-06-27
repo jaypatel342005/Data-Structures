@@ -1,3 +1,5 @@
+// WAP to convert seconds into hours, minutes & seconds and print in HH:MM:SS 
+
 import java.util.Scanner;
 
 public class Lab1_9 {

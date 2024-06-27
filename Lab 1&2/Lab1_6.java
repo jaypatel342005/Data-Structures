@@ -1,3 +1,5 @@
+//Write a program to find power of a number using loop. 
+
 import java.util.Scanner;
 
 public class Lab1_6 {

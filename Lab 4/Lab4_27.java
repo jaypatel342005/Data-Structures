@@ -1,3 +1,5 @@
+// WAP to replace lowercase characters by uppercase & vice-versa in a user specified string
+
 import java.util.Scanner;
 public class Lab4_27{
 	public static void main(String[] args) {

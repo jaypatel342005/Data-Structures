@@ -1,3 +1,5 @@
+//Create class Employee_Detail with attributes Employee_ID, Name, Designation, and Salary. Write a program to read the detail from user and print it. 
+
 import java.util.Scanner;
 
 class Employee_Detail {
@@ -16,6 +18,7 @@ class Employee_Detail {
 
     // Method to display employee details
     public void displayDetails() {
+        System.out.println("----------------Employee Details---------------");
         System.out.println("Employee ID: " + employeeID);
         System.out.println("Name: " + name);
         System.out.println("Designation: " + designation);

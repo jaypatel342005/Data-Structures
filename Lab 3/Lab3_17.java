@@ -1,3 +1,5 @@
+// Write a program to find whether the array contains a duplicate number or not.
+
 import java.util.Scanner;
 
 public class Lab3_17 {

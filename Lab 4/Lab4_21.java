@@ -1,3 +1,5 @@
+//Write a program to insert a number at a given location in an array. 
+
 import java.util.*;
 
 public class Lab4_21 {

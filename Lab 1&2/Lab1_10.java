@@ -1,3 +1,6 @@
+// WAP to convert number of days into year, week & days 
+
+
 import java.util.Scanner;
 
 public class Lab1_10 {

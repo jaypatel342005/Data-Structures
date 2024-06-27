@@ -1,3 +1,5 @@
+// Suppose you are senior developer for an Relational Database Management System   named "Array Database" where everything is implemented using only array, today your task is to implement aggregate function like sum, min, max, avg. For simplicity, assume that your database can only store integers. 
+
 import java.util.Scanner;
 public class Lab4_28{
 	public static void main(String[] args) {

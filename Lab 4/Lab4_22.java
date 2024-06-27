@@ -1,3 +1,5 @@
+// Write a program to delete a number from a given location in an array. 
+
 import java.util.*;
 
 public class Lab4_22 {

@@ -1,3 +1,5 @@
+//Write a program to calculate sum of numbers from m to n. 
+
 import java.util.Scanner;
 public class Lab3_14{
 	public static void main(String[] args) {

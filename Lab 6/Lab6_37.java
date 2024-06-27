@@ -1,3 +1,4 @@
+// Create a class BankAccount with attributes like account number, balance, account holder and name. Create an array of BankAccount objects to store bank accounts. Implement methods to deposit money, withdraw money and check balance
 
 
 import java.util.Scanner;

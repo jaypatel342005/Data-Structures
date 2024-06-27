@@ -1,3 +1,5 @@
+// Write a program to determine whether the entered character is vowel or not. 
+
 import java.util.Scanner;
 
 public class Lab1_3 {

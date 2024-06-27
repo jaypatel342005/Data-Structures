@@ -1,3 +1,5 @@
+//Write a program to delete duplicate numbers from an array. 
+
 import java.util.Scanner;
 
 public class Lab4_25 {

@@ -1,3 +1,5 @@
+// Read two 2x2 matrices and perform addition of matrices into third matrix and print it 
+
 import java.util.Scanner;
 
 public class Lab5_30 {

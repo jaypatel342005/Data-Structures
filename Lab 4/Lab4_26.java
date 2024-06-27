@@ -1,3 +1,5 @@
+//Write a program to merge two unsorted arrays.
+
 import java.util.Scanner;
 
 public class Lab4_26 {

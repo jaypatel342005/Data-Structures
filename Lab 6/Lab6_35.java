@@ -1,3 +1,5 @@
+// Create array of object of class Student_Detail with attributes Enrollment_No, Name, Semester, CPI for 5 students, scan their information and print it. 
+
 import java.util.Scanner;
 
 class Student_Detail {
@@ -16,11 +18,13 @@ class Student_Detail {
 
     
     public void displayDetails() {
+        System.out.println("----------------Student Details---------------");
         System.out.println("Enrollment No: " + enrollmentNo);
         System.out.println("Name: " + name);
         System.out.println("Semester: " + semester);
         System.out.println("CPI: " + cpi);
         System.out.println(); 
+        System.out.println("----------------------------------------------");
     }
 }
 

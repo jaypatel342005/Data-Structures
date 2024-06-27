@@ -1,3 +1,5 @@
+// Write a program to read and display n numbers using an array.
+
 import java.util.Scanner;
 
 public class Lab3_13 {

@@ -4,130 +4,111 @@
 
 import java.util.Scanner;
 
- class Stack {
-    Scanner scanner = new Scanner(System.in);
-    int top = -1;
-    int max;
-    int[] stackArray;
-    
-    public Stack(int size) {
-        this.max = size;
-        stackArray = new int[max];
-        // for(int i=0 ; i<max; i++){
-        //     System.out.print("Enter value of "+i+" element : ");
-        //     stackArray[i] = scanner.nextInt();
-        //     top++;
-        // }
+class Stack {
+    private static final int MAX_SIZE = 100;
+    private int top;
+    private int[] stackArray;
+
+    public Stack() {
+        top = -1;
+        stackArray = new int[MAX_SIZE];
     }
 
-    public void push(int x){
-        if(top >= max-1){
-            System.out.println("Stack Overflow");
-            return;
-        }
-        else{
-        top++;
-        stackArray[top] = x;
-        System.out.println(x + " pushed to stack");
+    public void push(int value) {
+        if (top < MAX_SIZE - 1) {
+            stackArray[++top] = value;
+            System.out.println("Pushed " + value + " onto the stack.");
+        } else {
+            System.out.println("Stack overflow! Cannot push.");
         }
     }
 
-    public int pop(){
-        if(top < 0){
-            System.out.println("Stack Underflow");
-            return -1;
-        }
-        else{
-        int popped = stackArray[top];
-        top--;
-        return popped;
-        }
-     }
-
-     public int peep(){
-        if(top < 0){
-            System.out.println("Stack is Empty");
-            return -1;
-        }
-        else{
-        return stackArray[top];
-        }
-     }
-
-     public void display(){
-        if(top < 0){
-            System.out.println("Stack is Empty");
-            return;
-        }
-        System.out.println("Stack:");
-        for(int i = top; i >= 0; i--){
-            System.out.println(stackArray[i]);
+    public void pop() {
+        if (top >= 0) {
+            int poppedValue = stackArray[top--];
+            System.out.println("Popped value: " + poppedValue);
+        } else {
+            System.out.println("Stack is empty! Cannot pop.");
         }
     }
 
-     public void change(int index, int value){
-        if(index > top || index < 0){
-            System.out.println("Invalid Index");
-            return;
+    public void display() {
+        if (top >= 0) {
+            System.out.print("Stack contents: ");
+            for (int i = 0; i <= top; i++) {
+                System.out.print(stackArray[i] + " ");
+            }
+            System.out.println();
+        } else {
+            System.out.println("Stack is empty!");
         }
-        stackArray[index] = value;
-        System.out.println("Value changed at index " + index + " to " + value);
-     }
+    }
 
+    public void peep(int i) {
+        if ((top-i+1)>= 0) {
+            System.out.println("peeped value: " + stackArray[top-i+1]);
+        } else {
+            System.out.println("Stack is empty!");
+        }
+    }
 
-    
-    
-
-    
+    public void change(int newValue , int i ) {
+        if ((top-i+1) >= 0) {
+            stackArray[top-i+1] = newValue;
+            System.out.println("Top value changed to: " + newValue);
+        } else {
+            System.out.println("Stack is empty! Cannot change value.");
+        }
+    }
 }
-public class Lab7_38 {
-    
+
+class Lab7_38{
     public static void main(String[] args) {
-        System.out.println("enter the size of stake : ");
         Scanner scanner = new Scanner(System.in);
-        int size = scanner.nextInt();
-        Stack s1 = new Stack(size);
-        System.out.println("chose the operation no. that you want ");
-        System.out.println("1. push");
-        System.out.println("2. pop");
-        System.out.println("3. peep");
-        System.out.println("4. display");
-        System.out.println("5. change");
-        int choice = scanner.nextInt();
-        if( choice >= 1 && choice<=5){
-            switch(choice){
+        Stack stack = new Stack();
+
+        while (true) {
+            System.out.println("\nMenu:");
+            System.out.println("1. PUSH");
+            System.out.println("2. POP");
+            System.out.println("3. DISPLAY");
+            System.out.println("4. PEEP");
+            System.out.println("5. CHANGE");
+            System.out.println("6. Exit");
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+
+            switch (choice) {
                 case 1:
-                    System.out.println("Enter the value to push : ");
+                    System.out.print("Enter value to push: ");
                     int value = scanner.nextInt();
-                    s1.push(value);
+                    stack.push(value);
                     break;
                 case 2:
-                    int popped = s1.pop();
-                    if(popped!= -1){
-                        System.out.println("Popped value is : "+popped);
-                    }
+                    stack.pop();
                     break;
                 case 3:
-                    int peeked = s1.peep();
-                    if(peeked!= -1){
-                        System.out.println("Top value is : "+peeked);
-                    }
+                    stack.display();
                     break;
                 case 4:
-                    s1.display();
-                    break;
-                case 5:
-                    System.out.println("Enter the index and new value to change : ");
+                    System.out.print("Enter index to peep: ");
                     int index = scanner.nextInt();
-                    int newValue = scanner.nextInt();
-                    s1.change(index, newValue);
+                    stack.peep(index);
                     break;
+                case 5: 
+                    System.out.print("Enter index to change: ");
+                    int i = scanner.nextInt();
+                    System.out.print("Enter new value: ");
+                    int newValue = scanner.nextInt();
+                    stack.change(newValue,i);
+                    break;
+                case 6:
+                    System.out.println("Exiting. Thank you!");
+                    scanner.close();
+                    System.exit(0);
                 default:
-             }
+                    System.out.println("Invalid choice. Please select a valid option.");
+            }
         }
-        else{
-            System.out.println("Invalid choice");
-        }
-
     }
 }

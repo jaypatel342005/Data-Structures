@@ -121,6 +121,7 @@ public class Lab10_57 {
         int choice, data, position;
 
         do {
+            
             System.out.println("\nMenu:");
             System.out.println("1. Insert a node at the front of the linked list");
             System.out.println("2. Display all nodes");

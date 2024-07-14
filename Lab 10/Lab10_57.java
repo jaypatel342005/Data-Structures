@@ -162,8 +162,7 @@ public class Lab10_57 {
                     System.out.println("Invalid choice! Please try again.");
             }
         } while (choice != 7);
-
-        
+   
         scanner.close();
     }
 }

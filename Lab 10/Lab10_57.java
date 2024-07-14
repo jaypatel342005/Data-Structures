@@ -1,4 +1,5 @@
 
+
 // Write a menu driven program to implement following operations on the singly 
 // linked list.  
 //  Insert a node at the front of the linked list. 
@@ -20,7 +21,7 @@ class Node {
         this.data = data;
         this.next = null;
     }
-    
+
 }
 
 class SinglyLinkedList {

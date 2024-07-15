@@ -45,7 +45,7 @@ class LinkedList {
     }
 }
 
- public class Lab10_59 {
+public class Lab10_59 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -55,7 +55,7 @@ class LinkedList {
         System.out.println("Enter elements for the first linked list (type 'end' to stop):");
         while (true) {
             String input = scanner.next();
-            if (input.equals("end")) {
+            if (input.equalsIgnoreCase("end")) {
                 break;
             }
             int data = Integer.parseInt(input);
@@ -65,7 +65,7 @@ class LinkedList {
         System.out.println("Enter elements for the second linked list (type 'end' to stop):");
         while (true) {
             String input = scanner.next();
-            if (input.equals("end")) {
+            if (input.equalsIgnoreCase("end")) {
                 break;
             }
             int data = Integer.parseInt(input);

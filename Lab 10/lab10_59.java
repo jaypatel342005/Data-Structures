@@ -1,4 +1,5 @@
-// WAP to check whether 2 singly linked lists are same or not. 
+import java.util.Scanner;
+
 class Node {
     int data;
     Node next;
@@ -44,29 +45,35 @@ class LinkedList {
     }
 }
 
-public class lab10_59 {
+ public class Lab10_59 {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
         LinkedList list1 = new LinkedList();
-        list1.append(1);
-        list1.append(2);
-        list1.append(3);
-
         LinkedList list2 = new LinkedList();
-        list2.append(1);
-        list2.append(2);
-        list2.append(3);
 
-        LinkedList list3 = new LinkedList();
-        list3.append(1);
-        list3.append(2);
-        list3.append(4);
+        System.out.println("Enter elements for the first linked list (type 'end' to stop):");
+        while (true) {
+            String input = scanner.next();
+            if (input.equals("end")) {
+                break;
+            }
+            int data = Integer.parseInt(input);
+            list1.append(data);
+        }
 
-        System.out.println("List1 and List2 are identical: " + LinkedList.areIdentical(list1, list2));  // Output: true
-        System.out.println("List1 and List3 are identical: " + LinkedList.areIdentical(list1, list3));  // Output: false
+        System.out.println("Enter elements for the second linked list (type 'end' to stop):");
+        while (true) {
+            String input = scanner.next();
+            if (input.equals("end")) {
+                break;
+            }
+            int data = Integer.parseInt(input);
+            list2.append(data);
+        }
+
+        scanner.close();
+
+        System.out.println("List1 and List2 are identical: " + LinkedList.areIdentical(list1, list2));
     }
 }
-
-
-
-    
-

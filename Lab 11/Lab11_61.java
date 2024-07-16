@@ -87,9 +87,7 @@ class Queue {
     
 }
 
-/**
- * Lab11_61
- */
+
 public class Lab11_61 {
 
     public static void main(String[] args) {

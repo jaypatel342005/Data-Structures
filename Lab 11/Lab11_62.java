@@ -104,3 +104,9 @@ class SinglyLinkedList {
     }
 }
 
+
+public class Lab11_62 {
+
+    
+}
+

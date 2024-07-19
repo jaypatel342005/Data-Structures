@@ -1,6 +1,5 @@
 // 64. Write a program to reverse a linked list.
 
-
 import java.util.Scanner;
 
 class Node {

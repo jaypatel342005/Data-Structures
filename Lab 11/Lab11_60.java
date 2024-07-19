@@ -75,7 +75,6 @@ class Stack {
 }
 
 
-
 public class Lab11_60 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

@@ -19,6 +19,8 @@ class LinkedList {
     }
 
     // Method to insert a new node at the end of the linked list
+
+    
     void insert(int data) {
         Node newNode = new Node(data);
         if (head == null) {

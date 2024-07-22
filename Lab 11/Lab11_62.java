@@ -46,7 +46,7 @@ class SinglyLinkedList {
         }
     }
 
-    // Method to remove duplicates from the list without using HashSet
+    // Method to remove duplicates from the list
     public void removeDuplicates() {
         Node current = head;
 

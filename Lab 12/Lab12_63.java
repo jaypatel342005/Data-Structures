@@ -112,7 +112,7 @@ public class Lab12_63 {
       
         // LinkedList copiedList = originalList.copy();
         
-    System.out.println("Copied Linked List:");
+        System.out.println("Copied Linked List:");
         originalList.copy();
 
         // System.out.println("reverse linked list ");

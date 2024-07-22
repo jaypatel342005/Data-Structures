@@ -1,6 +1,5 @@
 // 63. Write a program to copy a linked list. 
 
-
 import java.util.Scanner;
 
 class Node {

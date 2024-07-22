@@ -42,7 +42,7 @@ class LinkedList {
 
 
 
-Node copy() {
+    Node copy() {
         LinkedList newList = new LinkedList();
         Node save = this.first;
         Node newfirst = null;

@@ -21,53 +21,53 @@ class Node {
 }
 
 class DoublyLinkedList {
-    Node head;
+    Node first;
 
     public DoublyLinkedList() {
-        this.head = null;
+        this.first = null;
     }
 
     // Insert a node at the front of the linked list
     public void insertFront(int data) {
         Node newNode = new Node(data);
-        if (head == null) {
-            head = newNode;
+        if (first == null) {
+            first = newNode;
         } else {
-            newNode.rptr = head;
-            head.lptr = newNode;
-            head = newNode;
+            newNode.rptr = first;
+            first.lptr = newNode;
+            first = newNode;
         }
         System.out.println("Node inserted at the front.");
     }
 
     // Delete a node from specified position
     public void deleteAtPosition(int position) {
-        if (head == null || position <= 0) {
+        if (first == null || position <= 0) {
             System.out.println("Invalid position!");
             return;
         }
-        Node current = head;
+        Node save = first;
         int i;
 
-        for (i = 1; current != null && i < position; i++) {
-            current = current.rptr;
+        for (i = 1; save != null && i < position; i++) {
+            save = save.rptr;
         }
 
-        if (current == null) {
+        if (save == null) {
             System.out.println("Position not found!");
             return;
         }
 
-        if (head == current) {
-            head = current.rptr;
+        if (first == save) {
+            first = save.rptr;
         }
 
-        if (current.rptr != null) {
-            current.rptr.lptr = current.lptr;
+        if (save.rptr != null) {
+            save.rptr.lptr = save.lptr;
         }
 
-        if (current.lptr != null) {
-            current.lptr.rptr = current.rptr;
+        if (save.lptr != null) {
+            save.lptr.rptr = save.rptr;
         }
 
         System.out.println("Node deleted at position " + position);
@@ -76,33 +76,36 @@ class DoublyLinkedList {
     // Insert a node at the end of the linked list
     public void insertEnd(int data) {
         Node newNode = new Node(data);
-        if (head == null) {
-            head = newNode;
+        if (first == null) {
+            first = newNode;
         } else {
-            Node current = head;
-            while (current.rptr != null) {
-                current = current.rptr;
+            Node save = first;
+            while (save.rptr != null) {
+                save = save.rptr;
             }
-            current.rptr = newNode;
-            newNode.lptr = current;
+            save.rptr = newNode;
+            newNode.lptr = save;
         }
         System.out.println("Node inserted at the end.");
     }
 
     // Display all nodes
     public void display() {
-        if (head == null) {
+        if (first == null) {
             System.out.println("List is empty.");
             return;
         }
-        Node current = head;
-        while (current != null) {
-            System.out.print(current.data + " ");
-            current = current.rptr;
+        Node save = first;
+        while (save != null) {
+            System.out.print(save.data + " ");
+            save = save.rptr;
         }
         System.out.println();
     }
+   
+}
 
+public class Lab13_72 {
     public static void main(String[] args) {
         DoublyLinkedList list = new DoublyLinkedList();
         Scanner scanner = new Scanner(System.in);
@@ -147,4 +150,5 @@ class DoublyLinkedList {
 
         scanner.close();
     }
+    
 }

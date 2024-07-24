@@ -10,8 +10,8 @@ import java.util.Scanner;
 
 class Node {
     int data;
-    Node lptr; // left pointer (previous)
-    Node rptr; // right pointer (next)
+    Node lptr; 
+    Node rptr; 
 
     Node(int data) {
         this.data = data;

@@ -8,93 +8,93 @@
 import java.util.Scanner;
 
 class Node {
-    int data;
-    Node next;
+    int info;
+    Node link;
     
-    Node(int data) {
-        this.data = data;
-        this.next = null;
+    Node(int info) {
+        this.info = info;
+        this.link = null;
     }
 }
 
 class CircularLinkedList {
-    private Node head;
-    private Node tail;
+    private Node first;
+    private Node last;
 
     public CircularLinkedList() {
-        head = null;
-        tail = null;
+        first = null;
+        last = null;
     }
 
-    public void insertAtFront(int data) {
-        Node newNode = new Node(data);
-        if (head == null) {
-            head = newNode;
-            tail = newNode;
-            newNode.next = head;
+    public void insertAtFront(int info) {
+        Node newNode = new Node(info);
+        if (first == null) {
+            first = newNode;
+            last = newNode;
+            newNode.link = first;
         } else {
-            newNode.next = head;
-            head = newNode;
-            tail.next = head;
+            newNode.link = first;
+            first = newNode;
+            last.link = first;
         }
     }
 
-    public void insertAtEnd(int data) {
-        Node newNode = new Node(data);
-        if (head == null) {
-            head = newNode;
-            tail = newNode;
-            newNode.next = head;
+    public void insertAtEnd(int info) {
+        Node newNode = new Node(info);
+        if (first == null) {
+            first = newNode;
+            last = newNode;
+            newNode.link = first;
         } else {
-            tail.next = newNode;
-            tail = newNode;
-            tail.next = head;
+            last.link = newNode;
+            last = newNode;
+            last.link = first;
         }
     }
 
     public void deleteFromPosition(int position) {
-        if (head == null) {
+        if (first == null) {
             System.out.println("List is empty.");
             return;
         }
 
-        Node current = head;
+        Node current = first;
         Node previous = null;
         
         if (position == 1) {
-            if (head == tail) {
-                head = null;
-                tail = null;
+            if (first == last) {
+                first = null;
+                last = null;
             } else {
-                head = head.next;
-                tail.next = head;
+                first = first.link;
+                last.link = first;
             }
         } else {
             for (int i = 1; i < position; i++) {
                 previous = current;
-                current = current.next;
+                current = current.link;
             }
 
-            if (current == tail) {
-                tail = previous;
-                tail.next = head;
+            if (current == last) {
+                last = previous;
+                last.link = first;
             } else {
-                previous.next = current.next;
+                previous.link = current.link;
             }
         }
     }
 
     public void display() {
-        if (head == null) {
+        if (first == null) {
             System.out.println("List is empty.");
             return;
         }
 
-        Node temp = head;
+        Node temp = first;
         do {
-            System.out.print(temp.data + " ");
-            temp = temp.next;
-        } while (temp != head);
+            System.out.print(temp.info + " ");
+            temp = temp.link;
+        } while (temp != first);
         System.out.println();
     }
 }
@@ -116,12 +116,12 @@ public class Lab13_71 {
             
             switch (choice) {
                 case 1:
-                    System.out.print("Enter data to insert at the front: ");
+                    System.out.print("Enter info to insert at the front: ");
                     int dataFront = scanner.nextInt();
                     list.insertAtFront(dataFront);
                     break;
                 case 2:
-                    System.out.print("Enter data to insert at the end: ");
+                    System.out.print("Enter info to insert at the end: ");
                     int dataEnd = scanner.nextInt();
                     list.insertAtEnd(dataEnd);
                     break;

@@ -26,6 +26,8 @@ import java.util.Scanner;
             queue[rear] = data;
             rear++;
         }
+        System.out.println(data+" is enqueued in queue");
+        display();
         return;
     }
 
@@ -46,6 +48,10 @@ import java.util.Scanner;
 
             rear--;
         }
+        
+        System.out.println(queue[front]+" is dequeued from queue");
+
+        display();
         return;
     }
 

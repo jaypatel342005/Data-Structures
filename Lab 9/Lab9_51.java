@@ -42,6 +42,7 @@ import java.util.Scanner;
             front = (front + 1) % size;
         }
         System.out.println(queue[front] + " dequeued from queue");
+        display();
     }
 
     // Function to display the elements of the queue

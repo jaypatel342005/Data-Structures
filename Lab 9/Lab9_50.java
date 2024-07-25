@@ -50,7 +50,6 @@ import java.util.Scanner;
         }
         
         System.out.println(queue[front]+" is dequeued from queue");
-
         display();
         return;
     }

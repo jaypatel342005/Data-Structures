@@ -27,6 +27,7 @@ import java.util.Scanner;
             rear = (rear + 1) % size;
         }
         queue[rear] = data;
+        
         System.out.println(data + " enqueued to queue");
         display();
     }

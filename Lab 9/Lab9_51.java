@@ -41,7 +41,8 @@ import java.util.Scanner;
         } else {
             front = (front + 1) % size;
         }
-        System.out.println(queue[front] + " dequeued from queue");
+
+        System.out.println(queue[front] + " is dequeued from queue");
         display();
     }
 

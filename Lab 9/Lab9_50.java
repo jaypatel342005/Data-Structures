@@ -7,8 +7,8 @@
 import java.util.Scanner;
 
  class Queue {
-    private int front, rear, capacity;
-    private int queue[];
+     int front, rear, capacity;
+     int queue[];
 
     Queue(int size) {
         front = rear = 0;

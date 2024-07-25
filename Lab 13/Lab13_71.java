@@ -18,8 +18,8 @@ class Node {
 }
 
 class CircularLinkedList {
-    private Node first;
-    private Node last;
+     Node first;
+     Node last;
 
     public CircularLinkedList() {
         first = null;

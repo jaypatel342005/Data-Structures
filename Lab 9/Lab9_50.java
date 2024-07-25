@@ -6,107 +6,102 @@
 
 import java.util.Scanner;
 
-class Queue {
-    private int front, rear, size, capacity;
-    private int[] queueArray;
+ class Queue {
+    private int front, rear, capacity;
+    private int queue[];
 
-    public Queue(int capacity) {
-        this.capacity = capacity;
-        front = size = 0;
-        rear = capacity - 1;
-        queueArray = new int[this.capacity];
+    Queue(int size) {
+        front = rear = 0;
+        capacity = size;
+        queue = new int[capacity];
     }
 
-    // Check if the queue is full
-    boolean isFull() {
-        return (size == capacity);
-    }
-
-    // Check if the queue is empty
-    boolean isEmpty() {
-        return (size == 0);
-    }
-
-    // Enqueue operation
-    void enqueue(int item) {
-        if (isFull()) {
-            System.out.println("Queue is full. Cannot enqueue.");
+    // Function to add an element at the end of the queue
+    void enqueue(int data) {
+        if (capacity == rear) {
+            System.out.println("Queue is full");
             return;
         }
-        rear = (rear + 1) % capacity;
-        queueArray[rear] = item;
-        size++;
-        System.out.println(item + " enqueued to the queue.");
-    }
-
-    // Dequeue operation
-    int dequeue() {
-        if (isEmpty()) {
-            System.out.println("Queue is empty. Cannot dequeue.");
-            return Integer.MIN_VALUE;
+        else {
+            queue[rear] = data;
+            rear++;
         }
-        int item = queueArray[front];
-        front = (front + 1) % capacity;
-        size--;
-        System.out.println(item + " dequeued from the queue.");
-        return item;
+        return;
     }
 
-    // Display operation
+    // Function to remove an element from the front of the queue
+    void dequeue() {
+        if (front == rear) {
+            System.out.println("Queue is empty");
+            return;
+        }
+        else {
+            for (int i = 0; i < rear - 1; i++) {
+                queue[i] = queue[i + 1];
+            }
+
+            if (rear < capacity) {
+                queue[rear] = 0;
+            }
+
+            rear--;
+        }
+        return;
+    }
+
+    // Function to display the elements of the queue
     void display() {
-        if (isEmpty()) {
-            System.out.println("Queue is empty.");
+        int i;
+        if (front == rear) {
+            System.out.println("Queue is empty");
             return;
         }
-        System.out.print("Queue elements: ");
-        for (int i = 0; i < size; i++) {
-            System.out.print(queueArray[(front + i) % capacity] + " ");
+
+        for (i = front; i < rear; i++) {
+            System.out.printf("%d ", queue[i]);
         }
         System.out.println();
+        return;
     }
-
-    
+ 
 }
 
 
 public class Lab9_50 {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the capacity of the queue: ");
-        int capacity = scanner.nextInt();
-        Queue queue = new Queue(capacity);
 
-        int choice, item;
-        do {
-            System.out.println("\nMenu:");
+    public static void main(String[] args) {
+        Queue q = new Queue(1000);
+
+        Scanner sc = new Scanner(System.in);
+        int choice, data;
+
+        while (true) {
+            System.out.println("\nQueue Operations:");
             System.out.println("1. ENQUEUE");
             System.out.println("2. DEQUEUE");
             System.out.println("3. DISPLAY");
             System.out.println("4. EXIT");
             System.out.print("Enter your choice: ");
-            choice = scanner.nextInt();
+            choice = sc.nextInt();
 
             switch (choice) {
                 case 1:
-                    System.out.print("Enter item to enqueue: ");
-                    item = scanner.nextInt();
-                    queue.enqueue(item);
+                    System.out.print("Enter data to enqueue: ");
+                    data = sc.nextInt();
+                    q.enqueue(data);
                     break;
                 case 2:
-                    queue.dequeue();
+                    q.dequeue();
                     break;
                 case 3:
-                    queue.display();
+                    q.display();
                     break;
                 case 4:
-                    System.out.println("Exiting...");
-                    break;
+                    sc.close();
+                    System.exit(0);
                 default:
-                    System.out.println("Invalid choice! Please try again.");
+                    System.out.println("Invalid choice. Please enter again.");
             }
-        } while (choice != 4);
-
-        scanner.close();
+        }
     }
-    
 }

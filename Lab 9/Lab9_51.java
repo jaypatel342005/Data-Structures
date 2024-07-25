@@ -1,13 +1,13 @@
 // 51. Write a menu driven program to implement following operations on a circular queue using an Array 
-//  Insert 
-//  Delete 
+//  enqueue 
+//  dequeue 
 //  Display all elements of the queue 
 
 import java.util.Scanner;
 
  class CircularQueue {
-    private int front, rear, size;
-    private int queue[];
+     int front, rear, size;
+     int queue[];
 
     CircularQueue(int size) {
         front = -1;
@@ -16,8 +16,8 @@ import java.util.Scanner;
         queue = new int[size];
     }
 
-    // Function to insert an element at the end of the queue
-    void insert(int data) {
+    // Function to enqueue an element at the end of the queue
+    void enqueue(int data) {
         if ((rear + 1) % size == front) {
             System.out.println("Queue is full");
             return;
@@ -27,10 +27,12 @@ import java.util.Scanner;
             rear = (rear + 1) % size;
         }
         queue[rear] = data;
+        System.out.println(data + " enqueued to queue");
+        display();
     }
 
-    // Function to delete an element from the front of the queue
-    void delete() {
+    // Function to dequeue an element from the front of the queue
+    void dequeue() {
         if (front == -1) {
             System.out.println("Queue is empty");
             return;
@@ -39,6 +41,7 @@ import java.util.Scanner;
         } else {
             front = (front + 1) % size;
         }
+        System.out.println(queue[front] + " dequeued from queue");
     }
 
     // Function to display the elements of the queue
@@ -70,8 +73,8 @@ public class Lab9_51 {
 
         while (true) {
             System.out.println("\nCircular Queue Operations:");
-            System.out.println("1. Insert");
-            System.out.println("2. Delete");
+            System.out.println("1. enqueue");
+            System.out.println("2. dequeue");
             System.out.println("3. Display");
             System.out.println("4. Exit");
             System.out.print("Enter your choice: ");
@@ -79,12 +82,12 @@ public class Lab9_51 {
 
             switch (choice) {
                 case 1:
-                    System.out.print("Enter data to insert: ");
+                    System.out.print("Enter data to enqueue: ");
                     data = sc.nextInt();
-                    q.insert(data);
+                    q.enqueue(data);
                     break;
                 case 2:
-                    q.delete();
+                    q.dequeue();
                     break;
                 case 3:
                     q.display();

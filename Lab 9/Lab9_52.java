@@ -4,6 +4,7 @@
 //  Delete from front end, Delete from rear end 
 //  Display all elements of the queue
 
+
 import java.util.Scanner;
 
 class Deque {

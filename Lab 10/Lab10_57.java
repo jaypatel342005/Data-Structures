@@ -25,7 +25,7 @@ class Node {
 }
 
 class SinglyLinkedList {
-    private Node head;
+     Node head;
 
     // Insert a node at the front of the linked list
     public void insertAtFront(int data) {
@@ -42,10 +42,10 @@ class SinglyLinkedList {
         }
         Node current = head;
         while (current != null) {
-            System.out.print(current.data + " -> ");
+            System.out.print(current.data + " ");
             current = current.next;
         }
-        System.out.println("null");
+       
     }
 
     // Delete the first node of the linked list

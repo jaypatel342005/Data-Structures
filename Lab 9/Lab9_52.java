@@ -132,7 +132,6 @@ class Deque {
     }
 }
 
-
 public class Lab9_52 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

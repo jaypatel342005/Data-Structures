@@ -50,6 +50,7 @@ class Deque {
         }
 
         deque[front] = key;
+        
     }
 
     // Insert at rear end

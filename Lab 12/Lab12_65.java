@@ -67,6 +67,7 @@ public class Lab12_65 {
                         link = link.link;
                     }
                 }
+                
             } while (swapped);
         }
 

@@ -1,7 +1,6 @@
 // 48. Write a program for evaluation of prefix Expression using Stack. 
 
 import java.util.Stack;
-
 import java.util.Scanner;
 
 public class Lab8_48 {

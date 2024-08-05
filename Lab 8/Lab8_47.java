@@ -43,7 +43,9 @@ public class Lab8_47 {
         
         
         return stack.pop();
+        
     }
+
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

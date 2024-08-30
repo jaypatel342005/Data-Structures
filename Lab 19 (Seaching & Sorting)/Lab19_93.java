@@ -22,19 +22,37 @@ public class Lab19_93 {
         }
 
         // insertion Sort
-        for (int i = 1; i < size; i++) {
-            int key = array[i];
-            int j = i - 1;
-            while (j >= 0 && array[j] > key) {
-                array[j + 1] = array[j];
-                j--;
+        // for (int i = 1; i < size; i++) {
+        //     int key = array[i];
+        //     int j = i - 1;
+        //     while (j >= 0 && array[j] > key) {
+        //         array[j + 1] = array[j];
+        //         j--;
+        //     }
+        //     array[j + 1] = key;
+        //     System.out.println("\nArray after inserting element at index " + (j + 1) + ":");
+        //     for (int k = 0; k < size; k++) {
+        //         System.out.print(array[k] + " ");
+        //     }
+        //     System.out.println();
+        // }
+
+        for(int i=0; i<array.length;i++){
+            for(int j=i+1;j>0;j--){
+                if(array[j]<array[j-1]){
+                    int temp = array[j];
+                    array[j] = array[j-1];
+                    array[j-1] = temp;
+                }
+                else{
+                    break;
+                }
             }
-            array[j + 1] = key;
-            System.out.println("\nArray after inserting element at index " + (j + 1) + ":");
-            for (int k = 0; k < size; k++) {
-                System.out.print(array[k] + " ");
-            }
-            System.out.println();
+        }
+
+        System.out.println("\nArray after sorting:");
+        for (int i = 0; i < size; i++) {
+            System.out.print(array[i] + " ");
         }
     }
 }

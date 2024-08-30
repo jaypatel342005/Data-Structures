@@ -1,4 +1,4 @@
-// 92. Write a program to implement Bubble using Array.
+// 92. Write a program to implement Bubble sort using Array.
 
 
 import java.util.Scanner;

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+</head>
+
+<body>
+	<form>
+		<input type="text" id="username" placeholder="Enter username"><br />
+		<input type="text" id="password" placeholder="Enter password"><br />
+		<input type="text" id="rpassword" placeholder="Enter Confirm  password"><br />
+		<input type="text" id="enrolmentnumber" placeholder="Enter your enrolmentNumber"><br />
+		<button onclick="validform()">submit</button>
+	</form>
+
+	<script type="text/javascript">
+		function validform() {
+			var username = document.getElementById('username').value
+			var password = document.getElementById('password').value;
+			console.log(password);
+			var rpassword = document.getElementById('rpassword').value
+			var enrolmentnumber = document.getElementById('enrolmentnumber').value
+			let pattern = /[!@#$%*^]{1,}[0,9]{1,}/;
+			// if (username.length < 8) {
+			// 	alert("Enter minimun 8 character");
+			// 	return;
+			// }
+			var regexp = new Regexp(pattern)
+			if (!regexp.test(password)) {
+				console.log("invalid password");
+				alert("invalid password");
+				return;
+			}
+			if (password != rpassword) {
+				alert("Please enter repate password correct");
+				return;
+			}
+			let pattern2 = "^23031701[0-9]{3}$"
+			var regexp = new RegExp(pattern2)
+			if (!regexp.test(enrolmentnumber)) {
+				console.log("invalid enrolmentnumber");
+				alert("Invalid enrolmentNumber");
+				return;
+			}
+		}
+
+
+
+	</script>
+</body>
+
+</html>
